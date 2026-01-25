@@ -90,30 +90,6 @@
             padding: 15px;
         }
         
-        .input-group {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 15px;
-            animation: slideDown 0.4s ease-out;
-        }
-        
-        .input-field {
-            flex: 1;
-            padding: 10px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            font-size: 0.9rem;
-            transition: all var(--transition-speed) ease;
-            background: var(--input-bg);
-            color: var(--text-color);
-        }
-        
-        .input-field:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
-        }
-        
         .categories-container {
             margin-bottom: 15px;
             display: flex;
@@ -362,42 +338,6 @@
             background: #5a6268;
         }
         
-        .export-import-container {
-            display: none;
-            margin-top: 15px;
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            border-radius: var(--border-radius);
-            background: var(--hover-bg);
-            animation: slideDown 0.4s ease-out;
-            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
-        }
-        
-        .export-import-textarea {
-            width: 100%;
-            min-height: 120px;
-            margin-bottom: 12px;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            font-family: monospace;
-            resize: vertical;
-            transition: border-color var(--transition-speed) ease;
-            background: var(--input-bg);
-            color: var(--text-color);
-        }
-        
-        .export-import-textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        .export-import-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 8px;
-        }
-        
         .sidebar {
             position: fixed;
             top: 0;
@@ -495,159 +435,6 @@
         .sidebar-overlay.active {
             display: block;
             animation: fadeIn 0.3s ease-out;
-        }
-        
-        .category-manager {
-            display: none;
-            margin-top: 15px;
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            border-radius: var(--border-radius);
-            background: var(--hover-bg);
-            animation: slideDown 0.4s ease-out;
-            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
-            position: relative;
-        }
-        
-        .close-btn {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--gray-color);
-            font-size: 1.1rem;
-            width: 26px;
-            height: 26px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all var(--transition-speed) ease;
-        }
-        
-        .close-btn:hover {
-            background: var(--hover-bg);
-            color: var(--danger-color);
-        }
-        
-        .category-list {
-            list-style: none;
-            margin-top: 12px;
-        }
-        
-        .category-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 12px;
-            border-bottom: 1px solid var(--border-color);
-            transition: all var(--transition-speed) ease;
-        }
-        
-        .category-item:last-child {
-            border-bottom: none;
-        }
-        
-        .category-item:hover {
-            background-color: var(--hover-bg);
-        }
-        
-        .category-name {
-            flex: 1;
-            font-weight: 500;
-        }
-        
-        .category-actions {
-            display: flex;
-            gap: 6px;
-        }
-        
-        .floating-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 100;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: pulse 2s infinite;
-        }
-        
-        .floating-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-            animation: none;
-        }
-        
-        .floating-button.active {
-            transform: rotate(135deg);
-            background: var(--secondary-color);
-        }
-        
-        .star-icon {
-            width: 15px;
-            height: 15px;
-            fill: currentColor;
-            transition: all 0.3s ease;
-        }
-        
-        .floating-form {
-            position: fixed;
-            bottom: 60px;
-            right: 20px;
-            width: 300px;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            z-index: 99;
-            opacity: 0;
-            transform: translateY(20px) scale(0.95);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            pointer-events: none;
-        }
-        
-        .floating-form.active {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: all;
-        }
-        
-        .floating-form .input-group {
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
-        
-        .floating-form .input-field {
-            margin-bottom: 8px;
-        }
-        
-        .floating-form select {
-            padding: 10px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            font-size: 0.9rem;
-            transition: all var(--transition-speed) ease;
-            background: var(--input-bg);
-            color: var(--text-color);
-            width: 100%;
-            margin-bottom: 8px;
-        }
-        
-        .floating-form select:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
         }
         
         .url-image-container {
@@ -763,19 +550,9 @@
             }
         }
         
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
         @media (max-width: 600px) {
             body {
                 padding: 8px;
-            }
-            
-            .input-group {
-                flex-direction: column;
             }
             
             .url-item {
@@ -795,20 +572,6 @@
             
             .title {
                 font-size: 1.1rem;
-            }
-            
-            .floating-form {
-                width: calc(100% - 40px);
-                right: 10px;
-                left: 10px;
-                bottom: 50px;
-            }
-            
-            .floating-button {
-                width: 30px;
-                height: 30px;
-                bottom: 15px;
-                right: 15px;
             }
             
             .sidebar {
@@ -836,33 +599,6 @@
             </svg>
             深色模式
         </button>
-        <button id="exportMenuBtn" class="sidebar-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-            </svg>
-            导出复制
-        </button>
-        <button id="importMenuBtn" class="sidebar-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
-            </svg>
-            导入粘贴
-        </button>
-        <button id="categoryMenuBtn" class="sidebar-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4h-8.5ZM8.5 4h2l.5.5V6h-3V4.5L8.5 4ZM14 5h-1.5v-.5l-.5-.5H10v4h4V5Zm-2.5 5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM3 13.5h7V15H3v-1.5Z"/>
-            </svg>
-            添加分类
-        </button>
-        <button id="overwriteDataBtn" class="sidebar-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                <path d="M11.354 4.646a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708l6-6a.5.5 0 0 0 0-.708z"/>
-            </svg>
-            网址覆盖
-        </button>
     </div>
     
     <!-- 侧边栏遮罩 -->
@@ -880,31 +616,6 @@
         </div>
         
         <div class="main">
-            <div id="exportContainer" class="export-import-container">
-                <textarea id="exportTextArea" class="export-import-textarea" readonly></textarea>
-                <div class="export-import-actions">
-                    <button id="closeExportBtn" class="btn btn-cancel">关闭</button>
-                </div>
-            </div>
-            
-            <div id="importContainer" class="export-import-container">
-                <textarea id="importTextArea" class="export-import-textarea" placeholder="请粘贴要导入的数据..."></textarea>
-                <div class="export-import-actions">
-                    <button id="confirmImportBtn" class="btn btn-primary">确认</button>
-                    <button id="closeImportBtn" class="btn btn-cancel">关闭</button>
-                </div>
-            </div>
-            
-            <div id="categoryManager" class="category-manager">
-                <button id="closeCategoryManager" class="close-btn">×</button>
-                <div class="input-group">
-                    <input type="text" id="categoryNameInput" class="input-field" placeholder="分类名称">
-                    <button id="addCategoryBtn" class="btn btn-primary">添加分类</button>
-                </div>
-                
-                <ul id="categoryList" class="category-list"></ul>
-            </div>
-            
             <div id="categoriesContainer" class="categories-container"></div>
             
             <div class="url-list-container">
@@ -913,796 +624,19 @@
         </div>
     </div>
 
-    <!-- 浮动按钮 -->
-    <div id="floatingButton" class="floating-button">
-        <svg class="star-icon" viewBox="0 0 24 24">
-            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-    </div>
-
-    <!-- 浮动表单 -->
-    <div id="floatingForm" class="floating-form">
-        <div class="input-group">
-            <input type="text" id="floatingNameInput" class="input-field" placeholder="名称">
-            <input type="text" id="floatingUrlInput" class="input-field" placeholder="网址">
-            <input type="text" id="floatingDescriptionInput" class="input-field" placeholder="介绍">
-            <select id="floatingCategorySelect" class="input-field">
-                <option value="">选择分类</option>
-            </select>
-            <button id="floatingAddBtn" class="btn btn-primary">添加</button>
-        </div>
-    </div>
-
     <script>
         // 收藏夹功能
         document.addEventListener('DOMContentLoaded', function() {
             const urlList = document.getElementById('urlList');
-            const exportContainer = document.getElementById('exportContainer');
-            const importContainer = document.getElementById('importContainer');
-            const exportTextArea = document.getElementById('exportTextArea');
-            const importTextArea = document.getElementById('importTextArea');
-            const closeExportBtn = document.getElementById('closeExportBtn');
-            const closeImportBtn = document.getElementById('closeImportBtn');
-            const confirmImportBtn = document.getElementById('confirmImportBtn');
-            
-            const categoryManager = document.getElementById('categoryManager');
-            const categoryNameInput = document.getElementById('categoryNameInput');
-            const addCategoryBtn = document.getElementById('addCategoryBtn');
-            const categoryList = document.getElementById('categoryList');
             const categoriesContainer = document.getElementById('categoriesContainer');
-            const closeCategoryManager = document.getElementById('closeCategoryManager');
             
             const sidebarToggle = document.getElementById('sidebarToggle');
             const sidebar = document.getElementById('sidebar');
             const sidebarOverlay = document.getElementById('sidebarOverlay');
             const darkModeBtn = document.getElementById('darkModeBtn');
-            const exportMenuBtn = document.getElementById('exportMenuBtn');
-            const importMenuBtn = document.getElementById('importMenuBtn');
-            const categoryMenuBtn = document.getElementById('categoryMenuBtn');
-            const overwriteDataBtn = document.getElementById('overwriteDataBtn');
             
-            const floatingButton = document.getElementById('floatingButton');
-            const floatingForm = document.getElementById('floatingForm');
-            const floatingNameInput = document.getElementById('floatingNameInput');
-            const floatingUrlInput = document.getElementById('floatingUrlInput');
-            const floatingDescriptionInput = document.getElementById('floatingDescriptionInput');
-            const floatingCategorySelect = document.getElementById('floatingCategorySelect');
-            const floatingAddBtn = document.getElementById('floatingAddBtn');
-            
-            let urls = JSON.parse(localStorage.getItem('saved_urls')) || [];
-            let categories = JSON.parse(localStorage.getItem('categories')) || [];
-            let isDarkMode = localStorage.getItem('dark_mode') === 'true';
-            let currentCategory = localStorage.getItem('currentCategory') || '';
-
-            // 初始化数据迁移：确保每个url对象都有description属性
-            urls = urls.map(url => {
-                if (!url.hasOwnProperty('description')) {
-                    url.description = '';
-                }
-                if (!url.hasOwnProperty('imageUrl')) {
-                    url.imageUrl = '';
-                }
-                return url;
-            });
-            localStorage.setItem('saved_urls', JSON.stringify(urls));
-
-            if (isDarkMode) {
-                document.body.classList.add('dark-mode');
-            }
-
-            const lastScrollPosition = localStorage.getItem('lastScrollPosition');
-            if (lastScrollPosition) {
-                setTimeout(() => {
-                    window.scrollTo(0, parseInt(lastScrollPosition));
-                    localStorage.removeItem('lastScrollPosition');
-                }, 100);
-            }
-
-            function formatDate(date) {
-                const year = date.getFullYear();
-                const month = String(date.getMonth() + 1).padStart(2, '0');
-                const day = String(date.getDate()).padStart(2, '0');
-                return `${year}.${month}.${day}`;
-            }
-
-            function renderCategories() {
-                categoriesContainer.innerHTML = '';
-                
-                const uncategorizedPill = document.createElement('div');
-                uncategorizedPill.className = `category-pill ${currentCategory === '' ? 'active' : ''}`;
-                uncategorizedPill.textContent = '未分类';
-                uncategorizedPill.addEventListener('click', () => {
-                    currentCategory = '';
-                    localStorage.setItem('currentCategory', currentCategory);
-                    renderCategories();
-                    renderUrls();
-                });
-                categoriesContainer.appendChild(uncategorizedPill);
-                
-                categories.forEach(category => {
-                    const pill = document.createElement('div');
-                    pill.className = `category-pill ${currentCategory === category ? 'active' : ''}`;
-                    pill.innerHTML = `
-                        ${category}
-                        <span class="category-count">(${urls.filter(url => url.category === category).length})</span>
-                    `;
-                    pill.addEventListener('click', () => {
-                        currentCategory = category;
-                        localStorage.setItem('currentCategory', currentCategory);
-                        renderCategories();
-                        renderUrls();
-                    });
-                    categoriesContainer.appendChild(pill);
-                });
-                
-                updateFloatingCategorySelect();
-            }
-            
-            function updateFloatingCategorySelect() {
-                floatingCategorySelect.innerHTML = '<option value="">选择分类</option>';
-                categories.forEach(category => {
-                    const option = document.createElement('option');
-                    option.value = category;
-                    option.textContent = category;
-                    floatingCategorySelect.appendChild(option);
-                });
-            }
-
-            function renderCategoryManager() {
-                categoryList.innerHTML = '';
-                if (categories.length === 0) {
-                    const emptyMessage = document.createElement('li');
-                    emptyMessage.textContent = '暂无分类';
-                    emptyMessage.style.textAlign = 'center';
-                    emptyMessage.style.padding = '15px';
-                    emptyMessage.style.color = 'var(--gray-color)';
-                    categoryList.appendChild(emptyMessage);
-                    return;
-                }
-                
-                categories.forEach((category, index) => {
-                    const li = document.createElement('li');
-                    li.className = 'category-item';
-                    li.innerHTML = `
-                        <span class="category-name">${category}</span>
-                        <div class="category-actions">
-                            <button class="icon-btn edit-category-btn" data-index="${index}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                </svg>
-                            </button>
-                            <button class="icon-btn delete-category-btn" data-index="${index}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                </svg>
-                            </button>
-                        </div>
-                    `;
-                    categoryList.appendChild(li);
-                });
-
-                document.querySelectorAll('.edit-category-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const index = this.getAttribute('data-index');
-                        editCategory(index);
-                    });
-                });
-
-                document.querySelectorAll('.delete-category-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const index = this.getAttribute('data-index');
-                        deleteCategory(index);
-                    });
-                });
-            }
-
-            function renderUrls() {
-                urlList.innerHTML = '';
-                const filteredUrls = currentCategory ? 
-                    urls.filter(url => url.category === currentCategory) : 
-                    urls.filter(url => !url.category || url.category === '');
-                    
-                if (filteredUrls.length === 0) {
-                    const emptyMessage = document.createElement('li');
-                    emptyMessage.textContent = '暂无网址';
-                    emptyMessage.style.textAlign = 'center';
-                    emptyMessage.style.padding = '30px 15px';
-                    emptyMessage.style.color = 'var(--gray-color)';
-                    urlList.appendChild(emptyMessage);
-                    return;
-                }
-                
-                filteredUrls.forEach((item, index) => {
-                    const actualIndex = urls.findIndex(url => 
-                        url.name === item.name && url.url === item.url && url.category === item.category);
-                    
-                    const li = document.createElement('li');
-                    li.className = 'url-item';
-                    li.setAttribute('data-index', actualIndex);
-                    li.innerHTML = `
-                        <div class="url-content">
-                            <a href="#" class="url-name" data-url="${item.url}">${item.name}</a>
-                            <span class="url-description">${item.description || ''}</span>
-                            <div>
-                                ${item.category ? `<span class="url-category">${item.category}</span>` : ''}
-                                <span class="url-time">${item.createdTime || formatDate(new Date())}</span>
-                            </div>
-                        </div>
-                        <div class="url-actions">
-                            <button class="icon-btn yandex-btn" data-url="${item.url}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M6 0a6 6 0 1 1 0 12A6 6 0 0 1 6 0zM5 6a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm3 0a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
-                                </svg>
-                            </button>
-                            <button class="icon-btn image-btn" data-index="${actualIndex}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                                    <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"/>
-                                </svg>
-                            </button>
-                            <button class="icon-btn change-category-btn" data-index="${actualIndex}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4h-8.5ZM8.5 4h2l.5.5V6h-3V4.5L8.5 4ZM14 5h-1.5v-.5l-.5-.5H10v4h4V5Zm-2.5 5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM3 13.5h7V15H3v-1.5Z"/>
-                                </svg>
-                            </button>
-                            <button class="icon-btn description-btn" data-index="${actualIndex}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                                    <path d="M6.854 4.854a.5.5 0 0 0-.708-.708L4.5 5.793l-.646-.647a.5.5 0 1 0-.708.708l1 1a.5.5 0 0 0 .708 0l2-2zm0 4a.5.5 0 0 0-.708-.708L4.5 9.793l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l2-2zm0 4a.5.5 0 0 0-.708-.708l-1.646 1.647-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l2-2z"/>
-                                </svg>
-                            </button>
-                            <button class="icon-btn edit-btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                </svg>
-                            </button>
-                            <button class="icon-btn delete-btn" data-index="${actualIndex}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                </svg>
-                            </button>
-                        </div>
-                        ${item.imageUrl ? `
-                            <div class="url-image-container">
-                                <img src="${item.imageUrl}" alt="缩略图" class="url-image-thumbnail" data-image="${item.imageUrl}">
-                            </div>
-                        ` : ''}
-                    `;
-                    urlList.appendChild(li);
-                });
-
-                document.querySelectorAll('.url-name').forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const url = this.getAttribute('data-url');
-                        if (url) {
-                            localStorage.setItem('lastScrollPosition', window.scrollY);
-                            localStorage.setItem('currentCategory', currentCategory);
-                            window.open(url, '_self');
-                        }
-                    });
-                });
-
-                document.querySelectorAll('.edit-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const li = this.closest('.url-item');
-                        const index = li.getAttribute('data-index');
-                        editUrl(index, li);
-                    });
-                });
-
-                document.querySelectorAll('.delete-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const index = this.getAttribute('data-index');
-                        showDeleteConfirm(index);
-                    });
-                });
-                
-                document.querySelectorAll('.change-category-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const index = this.getAttribute('data-index');
-                        showChangeCategoryModal(index);
-                    });
-                });
-                
-                document.querySelectorAll('.description-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const index = this.getAttribute('data-index');
-                        showDescriptionModal(index);
-                    });
-                });
-                
-                document.querySelectorAll('.yandex-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const url = this.getAttribute('data-url');
-                        if (url) {
-                            const yandexUrl = `https://yandex.eu/search/?text=${encodeURIComponent(url)}&lr=109366`;
-                            window.open(yandexUrl, '_blank');
-                        }
-                    });
-                });
-                
-                document.querySelectorAll('.image-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const index = this.getAttribute('data-index');
-                        showImageModal(index);
-                    });
-                });
-                
-                document.querySelectorAll('.url-image-thumbnail').forEach(img => {
-                    img.addEventListener('click', function() {
-                        const imageUrl = this.getAttribute('data-image');
-                        showFullscreenImage(imageUrl);
-                    });
-                });
-            }
-
-            function addUrl() {
-                let name = floatingNameInput.value.trim();
-                let url = floatingUrlInput.value.trim();
-                let description = floatingDescriptionInput.value.trim();
-                let category = floatingCategorySelect.value;
-                
-                if (url) {
-                    if (!/^https?:\/\//i.test(url)) {
-                        url = 'https://' + url;
-                    }
-                    
-                    // 检查网址是否已存在
-                    const isDuplicate = urls.some(item => item.url === url);
-                    if (isDuplicate) {
-                        // 网址已存在，给用户反馈
-                        const originalColor = floatingUrlInput.style.borderColor;
-                        floatingUrlInput.style.borderColor = 'var(--danger-color)';
-                        floatingUrlInput.focus();
-                        
-                        // 2秒后恢复原状
-                        setTimeout(() => {
-                            floatingUrlInput.style.borderColor = originalColor;
-                        }, 2000);
-                        return;
-                    }
-                    
-                    const displayName = name || url;
-                    
-                    urls.unshift({ 
-                        name: displayName, 
-                        url: url, 
-                        description: description,
-                        category: category,
-                        createdTime: formatDate(new Date()),
-                        imageUrl: ''
-                    });
-                    localStorage.setItem('saved_urls', JSON.stringify(urls));
-                    
-                    floatingNameInput.value = '';
-                    floatingUrlInput.value = '';
-                    floatingDescriptionInput.value = '';
-                    floatingCategorySelect.value = '';
-                    toggleFloatingForm();
-                    
-                    renderCategories();
-                    renderUrls();
-                }
-            }
-
-            function addCategory() {
-                const name = categoryNameInput.value.trim();
-                if (name && !categories.includes(name)) {
-                    categories.push(name);
-                    localStorage.setItem('categories', JSON.stringify(categories));
-                    categoryNameInput.value = '';
-                    renderCategories();
-                    renderCategoryManager();
-                }
-            }
-
-            function editUrl(index, li) {
-                const item = urls[index];
-                
-                li.innerHTML = `
-                    <input type="text" class="input-field edit-name-input" value="${item.name}" placeholder="名称">
-                    <input type="text" class="input-field edit-url-input" value="${item.url}" placeholder="网址">
-                    <div class="url-actions">
-                        <button class="icon-btn save-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-                            </svg>
-                        </button>
-                        <button class="icon-btn cancel-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </button>
-                    </div>
-                `;
-
-                const saveBtn = li.querySelector('.save-btn');
-                const cancelBtn = li.querySelector('.cancel-btn');
-                const nameInput = li.querySelector('.edit-name-input');
-                const urlInput = li.querySelector('.edit-url-input');
-
-                saveBtn.addEventListener('click', function() {
-                    const newName = nameInput.value.trim();
-                    let newUrl = urlInput.value.trim();
-                    
-                    if (newUrl) {
-                        if (!/^https?:\/\//i.test(newUrl)) {
-                            newUrl = 'https://' + newUrl;
-                        }
-                        
-                        // 检查网址是否已存在（排除自身）
-                        const isDuplicate = urls.some((item, i) => i !== index && item.url === newUrl);
-                        if (isDuplicate) {
-                            // 网址已存在，给用户反馈
-                            const originalColor = urlInput.style.borderColor;
-                            urlInput.style.borderColor = 'var(--danger-color)';
-                            urlInput.focus();
-                            
-                            // 2秒后恢复原状
-                            setTimeout(() => {
-                                urlInput.style.borderColor = originalColor;
-                            }, 2000);
-                            return;
-                        }
-                        
-                        const displayName = newName || newUrl;
-                        
-                        urls[index] = { 
-                            name: displayName, 
-                            url: newUrl, 
-                            description: urls[index].description,
-                            category: urls[index].category,
-                            createdTime: urls[index].createdTime,
-                            imageUrl: urls[index].imageUrl
-                        };
-                        localStorage.setItem('saved_urls', JSON.stringify(urls));
-                        renderCategories();
-                        renderUrls();
-                    }
-                });
-
-                cancelBtn.addEventListener('click', function() {
-                    renderUrls();
-                });
-            }
-            
-            function showDescriptionModal(index) {
-                const item = urls[index];
-                
-                const modal = document.createElement('div');
-                modal.className = 'modal';
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>编辑介绍</h3>
-                        </div>
-                        <div class="modal-body">
-                            <textarea id="descriptionInput" class="input-field" placeholder="介绍" style="width: 100%; min-height: 80px; resize: vertical;">${item.description || ''}</textarea>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-cancel" id="cancelDescription">取消</button>
-                            <button class="btn btn-primary" id="saveDescription">确定</button>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                const descriptionInput = document.getElementById('descriptionInput');
-                const cancelBtn = document.getElementById('cancelDescription');
-                const saveBtn = document.getElementById('saveDescription');
-                
-                cancelBtn.addEventListener('click', function() {
-                    document.body.removeChild(modal);
-                });
-                
-                saveBtn.addEventListener('click', function() {
-                    const description = descriptionInput.value.trim();
-                    urls[index].description = description;
-                    localStorage.setItem('saved_urls', JSON.stringify(urls));
-                    renderUrls();
-                    document.body.removeChild(modal);
-                });
-                
-                descriptionInput.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' && e.ctrlKey) {
-                        const description = descriptionInput.value.trim();
-                        urls[index].description = description;
-                        localStorage.setItem('saved_urls', JSON.stringify(urls));
-                        renderUrls();
-                        document.body.removeChild(modal);
-                    }
-                });
-                
-                descriptionInput.focus();
-            }
-
-            function editCategory(index) {
-                const li = categoryList.children[index];
-                const category = categories[index];
-                
-                li.innerHTML = `
-                    <input type="text" class="input-field edit-category-input" value="${category}" placeholder="分类名称">
-                    <div class="category-actions">
-                        <button class="icon-btn save-category-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-                            </svg>
-                        </button>
-                        <button class="icon-btn cancel-category-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </button>
-                    </div>
-                `;
-
-                const saveBtn = li.querySelector('.save-category-btn');
-                const cancelBtn = li.querySelector('.cancel-category-btn');
-                const categoryInput = li.querySelector('.edit-category-input');
-
-                saveBtn.addEventListener('click', function() {
-                    const newName = categoryInput.value.trim();
-                    if (newName && !categories.includes(newName)) {
-                        const oldName = categories[index];
-                        categories[index] = newName;
-                        
-                        urls.forEach(url => {
-                            if (url.category === oldName) {
-                                url.category = newName;
-                            }
-                        });
-                        
-                        localStorage.setItem('categories', JSON.stringify(categories));
-                        localStorage.setItem('saved_urls', JSON.stringify(urls));
-                        renderCategories();
-                        renderCategoryManager();
-                        renderUrls();
-                    }
-                });
-
-                cancelBtn.addEventListener('click', function() {
-                    renderCategoryManager();
-                });
-            }
-
-            function showDeleteConfirm(index) {
-                const modal = document.createElement('div');
-                modal.className = 'modal';
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3></h3>
-                        </div>
-                        <div class="modal-body">
-                            <p class="modal-text">确定要删除？</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-cancel" id="cancelDelete">取消</button>
-                            <button class="btn btn-danger" id="confirmDelete">确认</button>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                document.getElementById('cancelDelete').addEventListener('click', function() {
-                    document.body.removeChild(modal);
-                });
-                
-                document.getElementById('confirmDelete').addEventListener('click', function() {
-                    urls.splice(index, 1);
-                    localStorage.setItem('saved_urls', JSON.stringify(urls));
-                    renderCategories();
-                    renderUrls();
-                    document.body.removeChild(modal);
-                });
-            }
-
-            function deleteCategory(index) {
-                const category = categories[index];
-                const hasUrls = urls.some(url => url.category === category);
-                
-                if (hasUrls) {
-                    const modal = document.createElement('div');
-                    modal.className = 'modal';
-                    modal.innerHTML = `
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3></h3>
-                            </div>
-                            <div class="modal-body">
-                                <p class="modal-text">确定要删除？</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-cancel" id="cancelDelete">取消</button>
-                                <button class="btn btn-danger" id="confirmDelete">确认</button>
-                            </div>
-                        </div>
-                    `;
-                    
-                    document.body.appendChild(modal);
-                    
-                    document.getElementById('cancelDelete').addEventListener('click', function() {
-                        document.body.removeChild(modal);
-                    });
-                    
-                    document.getElementById('confirmDelete').addEventListener('click', function() {
-                        categories.splice(index, 1);
-                        
-                        urls.forEach(url => {
-                            if (url.category === category) {
-                                url.category = '';
-                            }
-                        });
-                        
-                        localStorage.setItem('categories', JSON.stringify(categories));
-                        localStorage.setItem('saved_urls', JSON.stringify(urls));
-                        renderCategories();
-                        renderCategoryManager();
-                        renderUrls();
-                        document.body.removeChild(modal);
-                    });
-                } else {
-                    categories.splice(index, 1);
-                    localStorage.setItem('categories', JSON.stringify(categories));
-                    renderCategories();
-                    renderCategoryManager();
-                }
-            }
-
-            function showChangeCategoryModal(index) {
-                const modal = document.createElement('div');
-                modal.className = 'modal';
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>更改分类</h3>
-                        </div>
-                        <div class="modal-body">
-                            <select id="changeCategorySelect" class="select-field" style="width: 100%">
-                                <option value="">无分类</option>
-                                ${categories.map(cat => 
-                                    `<option value="${cat}" ${urls[index].category === cat ? 'selected' : ''}>${cat}</option>`
-                                ).join('')}
-                            </select>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-cancel" id="cancelChange">取消</button>
-                            <button class="btn btn-primary" id="confirmChange">确认</button>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                document.getElementById('cancelChange').addEventListener('click', function() {
-                    document.body.removeChild(modal);
-                });
-                
-                document.getElementById('confirmChange').addEventListener('click', function() {
-                    const newCategory = document.getElementById('changeCategorySelect').value;
-                    urls[index].category = newCategory;
-                    localStorage.setItem('saved_urls', JSON.stringify(urls));
-                    renderCategories();
-                    renderUrls();
-                    document.body.removeChild(modal);
-                });
-            }
-            
-            function showImageModal(index) {
-                const item = urls[index];
-                
-                const modal = document.createElement('div');
-                modal.className = 'modal';
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>图片管理</h3>
-                        </div>
-                        <div class="image-modal-body">
-                            <div class="image-input-group">
-                                <input type="text" id="imageUrlInput" class="input-field" placeholder="图片链接" value="${item.imageUrl || ''}">
-                                <img id="imagePreview" class="image-preview" src="${item.imageUrl || ''}" alt="图片预览" ${item.imageUrl ? '' : 'style="display: none;"'}>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-cancel" id="cancelImage">取消</button>
-                            <button class="btn btn-primary" id="saveImage">确定</button>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                const imageUrlInput = document.getElementById('imageUrlInput');
-                const imagePreview = document.getElementById('imagePreview');
-                const cancelBtn = document.getElementById('cancelImage');
-                const saveBtn = document.getElementById('saveImage');
-                
-                imageUrlInput.addEventListener('input', function() {
-                    const url = this.value.trim();
-                    if (url) {
-                        imagePreview.src = url;
-                        imagePreview.style.display = 'block';
-                    } else {
-                        imagePreview.style.display = 'none';
-                    }
-                });
-                
-                cancelBtn.addEventListener('click', function() {
-                    document.body.removeChild(modal);
-                });
-                
-                saveBtn.addEventListener('click', function() {
-                    const imageUrl = imageUrlInput.value.trim();
-                    urls[index].imageUrl = imageUrl;
-                    localStorage.setItem('saved_urls', JSON.stringify(urls));
-                    renderUrls();
-                    document.body.removeChild(modal);
-                });
-                
-                imageUrlInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        const imageUrl = imageUrlInput.value.trim();
-                        urls[index].imageUrl = imageUrl;
-                        localStorage.setItem('saved_urls', JSON.stringify(urls));
-                        renderUrls();
-                        document.body.removeChild(modal);
-                    }
-                });
-            }
-            
-            function showFullscreenImage(imageUrl) {
-                const modal = document.createElement('div');
-                modal.className = 'fullscreen-image-modal';
-                modal.innerHTML = `
-                    <img src="${imageUrl}" alt="全屏图片" class="fullscreen-image">
-                    <button class="close-fullscreen">×</button>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                modal.querySelector('.close-fullscreen').addEventListener('click', function() {
-                    document.body.removeChild(modal);
-                });
-                
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        document.body.removeChild(modal);
-                    }
-                });
-            }
-            
-            function showOverwriteConfirmModal() {
-                const modal = document.createElement('div');
-                modal.className = 'modal';
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>网址覆盖</h3>
-                        </div>
-                        <div class="modal-body">
-                            <p class="modal-text">将覆盖掉所有的分类和网址</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-cancel" id="cancelOverwrite">取消</button>
-                            <button class="btn btn-danger" id="confirmOverwrite">确认</button>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                document.getElementById('cancelOverwrite').addEventListener('click', function() {
-                    document.body.removeChild(modal);
-                });
-                
-                document.getElementById('confirmOverwrite').addEventListener('click', function() {
-                    const overwriteData ={
+            // 直接使用给定的数据
+            const defaultData = {
   "urls": [
     {
       "name": "vulva",
@@ -2579,54 +1513,138 @@
     "软件下载"
   ]
 }
-                    
-                    urls = overwriteData.urls;
-                    categories = overwriteData.categories;
-                    
-                    localStorage.setItem('saved_urls', JSON.stringify(urls));
-                    localStorage.setItem('categories', JSON.stringify(categories));
-                    
+            
+            let urls = defaultData.urls;
+            let categories = defaultData.categories;
+            let isDarkMode = localStorage.getItem('dark_mode') === 'true';
+            let currentCategory = localStorage.getItem('currentCategory') || '';
+
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+            }
+
+            function renderCategories() {
+                categoriesContainer.innerHTML = '';
+                
+                const uncategorizedPill = document.createElement('div');
+                uncategorizedPill.className = `category-pill ${currentCategory === '' ? 'active' : ''}`;
+                uncategorizedPill.textContent = '未分类';
+                uncategorizedPill.addEventListener('click', () => {
+                    currentCategory = '';
+                    localStorage.setItem('currentCategory', currentCategory);
                     renderCategories();
-                    renderCategoryManager();
                     renderUrls();
-                    
-                    document.body.removeChild(modal);
-                    closeSidebar();
+                });
+                categoriesContainer.appendChild(uncategorizedPill);
+                
+                categories.forEach(category => {
+                    const pill = document.createElement('div');
+                    pill.className = `category-pill ${currentCategory === category ? 'active' : ''}`;
+                    pill.innerHTML = `
+                        ${category}
+                        <span class="category-count">(${urls.filter(url => url.category === category).length})</span>
+                    `;
+                    pill.addEventListener('click', () => {
+                        currentCategory = category;
+                        localStorage.setItem('currentCategory', currentCategory);
+                        renderCategories();
+                        renderUrls();
+                    });
+                    categoriesContainer.appendChild(pill);
                 });
             }
 
-            function exportUrls() {
-                const data = {
-                    urls: urls,
-                    categories: categories
-                };
-                const dataStr = JSON.stringify(data, null, 2);
-                exportTextArea.value = dataStr;
-                exportContainer.style.display = 'block';
-                importContainer.style.display = 'none';
-                categoryManager.style.display = 'none';
-                closeSidebar();
+            function renderUrls() {
+                urlList.innerHTML = '';
+                const filteredUrls = currentCategory ? 
+                    urls.filter(url => url.category === currentCategory) : 
+                    urls.filter(url => !url.category || url.category === '');
+                    
+                if (filteredUrls.length === 0) {
+                    const emptyMessage = document.createElement('li');
+                    emptyMessage.textContent = '暂无网址';
+                    emptyMessage.style.textAlign = 'center';
+                    emptyMessage.style.padding = '30px 15px';
+                    emptyMessage.style.color = 'var(--gray-color)';
+                    urlList.appendChild(emptyMessage);
+                    return;
+                }
                 
-                exportTextArea.select();
+                filteredUrls.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.className = 'url-item';
+                    li.innerHTML = `
+                        <div class="url-content">
+                            <a href="#" class="url-name" data-url="${item.url}">${item.name}</a>
+                            <span class="url-description">${item.description || ''}</span>
+                            <div>
+                                ${item.category ? `<span class="url-category">${item.category}</span>` : ''}
+                                <span class="url-time">${item.createdTime || ''}</span>
+                            </div>
+                        </div>
+                        <div class="url-actions">
+                            <button class="icon-btn yandex-btn" data-url="${item.url}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M6 0a6 6 0 1 1 0 12A6 6 0 0 1 6 0zM5 6a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm3 0a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
+                                </svg>
+                            </button>
+                            ${item.imageUrl ? `
+                                <div class="url-image-container">
+                                    <img src="${item.imageUrl}" alt="缩略图" class="url-image-thumbnail" data-image="${item.imageUrl}">
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                    urlList.appendChild(li);
+                });
+
+                document.querySelectorAll('.url-name').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const url = this.getAttribute('data-url');
+                        if (url) {
+                            window.open(url, '_self');
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('.yandex-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const url = this.getAttribute('data-url');
+                        if (url) {
+                            const yandexUrl = `https://yandex.eu/search/?text=${encodeURIComponent(url)}&lr=109366`;
+                            window.open(yandexUrl, '_blank');
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('.url-image-thumbnail').forEach(img => {
+                    img.addEventListener('click', function() {
+                        const imageUrl = this.getAttribute('data-image');
+                        showFullscreenImage(imageUrl);
+                    });
+                });
             }
 
-            function importUrls() {
-                try {
-                    const importedData = JSON.parse(importTextArea.value);
-                    if (importedData.urls && Array.isArray(importedData.urls) && 
-                        importedData.categories && Array.isArray(importedData.categories)) {
-                        urls = importedData.urls;
-                        categories = importedData.categories;
-                        localStorage.setItem('saved_urls', JSON.stringify(urls));
-                        localStorage.setItem('categories', JSON.stringify(categories));
-                        renderCategories();
-                        renderCategoryManager();
-                        renderUrls();
-                        importContainer.style.display = 'none';
-                        importTextArea.value = '';
-                        closeSidebar();
+            function showFullscreenImage(imageUrl) {
+                const modal = document.createElement('div');
+                modal.className = 'fullscreen-image-modal';
+                modal.innerHTML = `
+                    <img src="${imageUrl}" alt="全屏图片" class="fullscreen-image">
+                    <button class="close-fullscreen">×</button>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                modal.querySelector('.close-fullscreen').addEventListener('click', function() {
+                    document.body.removeChild(modal);
+                });
+                
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        document.body.removeChild(modal);
                     }
-                } catch (error) {}
+                });
             }
 
             function toggleDarkMode() {
@@ -2634,15 +1652,6 @@
                 document.body.classList.toggle('dark-mode');
                 localStorage.setItem('dark_mode', isDarkMode);
                 closeSidebar();
-            }
-            
-            function toggleFloatingForm() {
-                floatingButton.classList.toggle('active');
-                floatingForm.classList.toggle('active');
-                
-                if (floatingForm.classList.contains('active')) {
-                    floatingNameInput.focus();
-                }
             }
             
             function toggleSidebar() {
@@ -2658,89 +1667,13 @@
             }
 
             // 事件监听
-            floatingAddBtn.addEventListener('click', addUrl);
-            
-            addCategoryBtn.addEventListener('click', addCategory);
-            
-            floatingUrlInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    addUrl();
-                }
-            });
-            
-            floatingNameInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    addUrl();
-                }
-            });
-            
-            floatingDescriptionInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    addUrl();
-                }
-            });
-            
-            categoryNameInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    addCategory();
-                }
-            });
-
-            closeExportBtn.addEventListener('click', function() {
-                exportContainer.style.display = 'none';
-            });
-            
-            closeImportBtn.addEventListener('click', function() {
-                importContainer.style.display = 'none';
-            });
-            
-            confirmImportBtn.addEventListener('click', importUrls);
-            
-            closeCategoryManager.addEventListener('click', function() {
-                categoryManager.style.display = 'none';
-            });
-            
             sidebarToggle.addEventListener('click', toggleSidebar);
             
             sidebarOverlay.addEventListener('click', closeSidebar);
             
             darkModeBtn.addEventListener('click', toggleDarkMode);
             
-            exportMenuBtn.addEventListener('click', exportUrls);
-            
-            importMenuBtn.addEventListener('click', function() {
-                importContainer.style.display = 'block';
-                exportContainer.style.display = 'none';
-                categoryManager.style.display = 'none';
-                importTextArea.value = '';
-                importTextArea.focus();
-                closeSidebar();
-            });
-            
-            categoryMenuBtn.addEventListener('click', function() {
-                categoryManager.style.display = 'block';
-                exportContainer.style.display = 'none';
-                importContainer.style.display = 'none';
-                closeSidebar();
-            });
-            
-            overwriteDataBtn.addEventListener('click', function() {
-                showOverwriteConfirmModal();
-                closeSidebar();
-            });
-            
-            floatingButton.addEventListener('click', toggleFloatingForm);
-            
-            document.addEventListener('click', function(e) {
-                if (floatingForm.classList.contains('active') && 
-                    !floatingForm.contains(e.target) && 
-                    !floatingButton.contains(e.target)) {
-                    toggleFloatingForm();
-                }
-            });
-            
             renderCategories();
-            renderCategoryManager();
             renderUrls();
         });
     </script>
