@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ciallo～(∠・ω<)⌒★</title>
-    <!-- Supabase SDK (added as requested) -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         :root {
             --primary-color: #4361ee;
@@ -655,6 +653,14 @@
       "category": "软件下载",
       "createdTime": "2026.02.07",
       "imageUrl": "https://iili.io/qqHtSNp.jpg"
+    },
+    {
+      "name": "品视觉",
+      "url": "https://pin.pinshi.click/sy/",
+      "description": "多为捆绑内容",
+      "category": "视频",
+      "createdTime": "2026.01.29",
+      "imageUrl": "https://iili.io/qqHQhmB.jpg"
     },
     {
       "name": "konachan",
@@ -1720,174 +1726,6 @@
             renderCategories();
             renderUrls();
         });
-        // ==================== Supabase + GitHub 登录 + 云收藏 开始 ====================
-        (function() {
-            // 确保DOM加载完成再操作
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initSupabase);
-            } else {
-                initSupabase();
-            }
-
-            function initSupabase() {
-                // 替换成你的真实值！从 Supabase Dashboard → Settings → API 复制
-                const supabaseUrl = 'https://waxxkfworjcrukcgbsf.supabase.co';  // 你的 project-ref
-                const supabaseAnonKey = '你的 anon public key （很长一串）';   // 从 API 页复制 anon key — 记得替换！
-
-                // 注意：CDN 导出的是 supabase 对象，使用 supabase.createClient
-                const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
-
-                // 当前用户
-                let currentUser = null;
-
-                // 监听登录状态变化（页面加载时/登录后自动触发）
-                supabaseClient.auth.onAuthStateChange((event, session) => {
-                    currentUser = session?.user ?? null;
-                    updateUI();  // 更新按钮文字、显示收藏等
-                    if (currentUser) {
-                        loadMyFavorites();  // 登录后自动加载个人收藏
-                    }
-                });
-
-                // 更新 UI（登录按钮变退出 + 显示用户名）
-                function updateUI() {
-                    const loginBtn = document.getElementById('githubLoginBtn');
-                    if (!loginBtn) return;
-
-                    if (currentUser) {
-                        const username = currentUser.user_metadata?.user_name || currentUser.user_metadata?.name || '用户';
-                        loginBtn.textContent = `退出 (${username})`;
-                        loginBtn.style.background = 'var(--danger-color)';
-                        // 可以在这里显示“我的收藏”分类或额外列表
-                    } else {
-                        loginBtn.textContent = 'GitHub 登录';
-                        loginBtn.style.background = 'var(--primary-color)';
-                    }
-                }
-
-                // GitHub 登录/退出按钮点击
-                async function handleLogin() {
-                    if (currentUser) {
-                        // 登出
-                        await supabaseClient.auth.signOut();
-                    } else {
-                        // 登录
-                        const { error } = await supabaseClient.auth.signInWithOAuth({
-                            provider: 'github',
-                            options: {
-                                redirectTo: window.location.href  // 登录后跳回当前页
-                            }
-                        });
-                        if (error) {
-                            console.error('登录失败喵～', error);
-                            alert('登录出错了！检查控制台～');
-                        }
-                    }
-                }
-
-                // 右下角浮动收藏按钮（★ 收藏当前页）
-                const fab = document.createElement('button');
-                fab.id = 'favBtn';
-                fab.innerHTML = '★<br>收藏';
-                fab.style.position = 'fixed';
-                fab.style.bottom = '30px';
-                fab.style.right = '30px';
-                fab.style.background = 'var(--success-color)';
-                fab.style.color = 'white';
-                fab.style.border = 'none';
-                fab.style.borderRadius = '50%';
-                fab.style.width = '70px';
-                fab.style.height = '70px';
-                fab.style.fontSize = '18px';
-                fab.style.cursor = 'pointer';
-                fab.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
-                fab.style.zIndex = '1000';
-                fab.style.textAlign = 'center';
-                fab.style.lineHeight = '1.2';
-                fab.style.paddingTop = '10px';
-                document.body.appendChild(fab);
-
-                fab.addEventListener('click', async () => {
-                    if (!currentUser) {
-                        alert('喵～先 GitHub 登录才能收藏哦！');
-                        return;
-                    }
-
-                    // 当前页面信息（可以改成输入框或自动抓取）
-                    const name = document.title || 'Ciallo～(∠・ω<)⌒★';
-                    const url = window.location.href;
-                    const description = prompt('输入描述（可选）：') || '从我的站点收藏';
-                    const category = '我的收藏';  // 或让用户选
-
-                    const newFav = {
-                        user_id: currentUser.id,
-                        name: name,
-                        url: url,
-                        description: description,
-                        category: category,
-                        createdTime: new Date().toISOString(),
-                        imageUrl: ''  // 可选，如果有图片
-                    };
-
-                    const { error } = await supabaseClient.from('favorites').insert([newFav]);
-
-                    if (error) {
-                        console.error('收藏失败', error);
-                        alert('收藏失败～' + (error.message || '未知错误'));
-                    } else {
-                        alert('收藏成功！下次登录还能看到～♡');
-                        loadMyFavorites();  // 刷新列表
-                    }
-                });
-
-                // 加载并显示我的收藏（示例：console.log，你可以改成渲染到页面）
-                async function loadMyFavorites() {
-                    if (!currentUser) return;
-
-                    const { data, error } = await supabaseClient
-                        .from('favorites')
-                        .select('*')
-                        .eq('user_id', currentUser.id)
-                        .order('createdTime', { ascending: false });
-
-                    if (error) {
-                        console.error('加载收藏失败', error);
-                        return;
-                    }
-
-                    console.log('我的云收藏列表：', data);
-                    // TODO: 这里可以创建一个新 <ul> 或加到现有 url-list 显示这些 data
-                    // 类似 renderUrls() 的逻辑，循环 data 创建 li
-                }
-
-                // 加登录按钮到 header（或 sidebar，随你）
-                const header = document.querySelector('.header') || document.body;
-                const loginBtn = document.createElement('button');
-                loginBtn.id = 'githubLoginBtn';
-                loginBtn.textContent = 'GitHub 登录';
-                loginBtn.style.position = 'absolute';
-                loginBtn.style.right = '20px';
-                loginBtn.style.top = '15px';
-                loginBtn.style.padding = '8px 16px';
-                loginBtn.style.background = 'var(--primary-color)';
-                loginBtn.style.color = 'white';
-                loginBtn.style.border = 'none';
-                loginBtn.style.borderRadius = 'var(--border-radius)';
-                loginBtn.style.cursor = 'pointer';
-                loginBtn.style.zIndex = '10';
-                header.appendChild(loginBtn);
-
-                loginBtn.addEventListener('click', handleLogin);
-
-                // 页面加载时检查登录状态
-                supabaseClient.auth.getSession().then(({ data: { session } }) => {
-                    currentUser = session?.user ?? null;
-                    updateUI();
-                    if (currentUser) loadMyFavorites();
-                });
-            }
-        })();
-        // ==================== Supabase + GitHub 登录 + 云收藏 结束 ====================
     </script>
 </body>
 </html>
